@@ -1,0 +1,26 @@
+name: Daily Script Runner
+
+on:
+  schedule:
+    - cron: '0 4 * * *'  # Runs daily at 4 AM UTC
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10.12'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      
+      - name: Run script
+        run: python daily.py

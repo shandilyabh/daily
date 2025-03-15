@@ -1,0 +1,6 @@
+websites:
+1. Hacker News
+2. TechCrunch
+3. WSJ
+4. Economic Times
+5. Money Talks
