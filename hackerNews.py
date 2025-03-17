@@ -1,5 +1,5 @@
 """
-Main Script
+Script for Hacker News
 """
 
 import requests
