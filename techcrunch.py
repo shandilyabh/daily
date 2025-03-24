@@ -12,7 +12,6 @@ options = webdriver.ChromeOptions()
 # options.add_argument("--start-maximized")
 driver = webdriver.Chrome(options=options)  # Ensure chromedriver is in PATH
 
-# Open a webpage
 driver.get("https://techcrunch.com/category/startups/")
 time.sleep(3)
 
@@ -20,7 +19,7 @@ posts_section = driver.find_element(By.CLASS_NAME, "wp-block-post-template")
 if posts_section:
     posts = posts_section.find_elements(By.CLASS_NAME, "wp-block-post")
     for post in posts:
-        print(post)
+        print(post.text)
 time.sleep(3)
 
 driver.quit()
